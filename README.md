@@ -31,9 +31,6 @@ Util Commands | Ubuntu, Debian, Wsl2
 <br>
 <br>
 <br>
-<br>
-<br>
-<br>
 
 <details>
 <summary>
