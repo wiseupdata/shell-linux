@@ -83,9 +83,10 @@ sudo add-apt-repository ppa:x2go/stable
 sudo apt update
 sudo apt install x2goserver x2goserver-xsession
 ```
-
+<a href="https://github.com/wiseupdata/wiseupdata">
 <img align="center" alt="gif" src="assets/x2go.gif" width="700" />
 </img>
+</a>
 <br>
 
 ### Install the xfce4 server
@@ -93,9 +94,9 @@ sudo apt install x2goserver x2goserver-xsession
 ```
 sudo apt install xfce4
 ```
-
-<img align="center" alt="gif" src="assets/xfce4.gif" width="700" />
-</img>
+<a href="https://github.com/wiseupdata/wiseupdata">
+<img align="center" alt="gif" src="assets/xfce4.gif" width="700" /></img>
+</a>
 <br>
 
 
@@ -114,7 +115,9 @@ sudo systemctl start x2goserver
 sudo service x2goserver status
 ```
 
+<a href="https://github.com/wiseupdata/wiseupdata">
 <img align="center" alt="gif" src="assets/x2goserver.gif" width="700" />
+</a>
 
 <br>
 <br>
@@ -130,8 +133,10 @@ sudo service x2goserver status
 
 [X2GoClient](https://wiki.x2go.org/doku.php/doc:installation:x2goclient)
 
+<a href="https://github.com/wiseupdata/wiseupdata">
 <img align="center" alt="gif" src="assets/x2goclientdownload.gif" width="700" />
 </img>
+</a>
 <br>
 
 ### Install the software
@@ -156,12 +161,17 @@ sudo service x2goserver status
 </summary>
 
 
-### Let's update the Ubuntu system
+### Let's install the s3fs-fuse
 
 ```
-sudo apt update
-sudo apt upgrade
+sudo apt-get update
+
+sudo apt install s3fs -y 
 ```
+
+<a href="https://github.com/wiseupdata/wiseupdata">
+<img align="center" alt="gif" src="assets/install.gif" width="700" />
+</a>
 
 </details>
 
