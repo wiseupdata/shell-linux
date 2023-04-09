@@ -34,7 +34,7 @@ Util Commands | Ubuntu, Debian, Wsl2
 
 <details>
 <summary>
-    ⏬ Install GUI RDP, remote desktop in one VM 
+    ⏬ Install GUI RDP, remote desktop in one VM <img align="left" alt="wise Up Data | Twitter" width="22px" src="assets/click.png" />
 </summary>
 
 <br>
