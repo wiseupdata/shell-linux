@@ -149,12 +149,8 @@ sudo service x2goserver status
 
 </details>
 
-<details>
-<summary>
-  Shell commands ⏬ 
-</summary>
+😍 Shell commands 
 
-<br>
 <details>
 <summary>
   Mount OCI Bucket 🧑‍💻
@@ -162,6 +158,11 @@ sudo service x2goserver status
 
 
 ### Let's install the s3fs-fuse
+
+
+> Requirements
+> - jq  `sudo apt install jq`
+> - [oci cli](https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/cliinstall.htm) 
 
 ```
 sudo apt-get update
@@ -172,6 +173,104 @@ sudo apt install s3fs -y
 <a href="https://github.com/wiseupdata/wiseupdata">
 <img align="center" alt="gif" src="assets/install.gif" width="700" />
 </a>
+
+<br>
+<br>
+
+### Generate the credentials in the Oracle Painel
+
+> Profile [icon] > My profile > Customer secret keys
+
+<a href="https://github.com/wiseupdata/wiseupdata">
+<img align="center" alt="gif" src="assets/secret.gif" width="700" />
+<a/>
+
+### Save the credentials
+
+```
+echo $ACCESS_KEY_OCI_ID:$SECRET_ACCESS_OCI_KEY > $HOME/.passwd-s3fs
+
+chmod 600 ${HOME}/.passwd-s3fs
+```
+Replace with the values you got from the web browser.
+
+
+You can check the result with 
+```
+cat $HOME/.passwd-s3fs
+```
+
+### Create a directory to the mount
+
+```
+sudo mkdir -p /oci/mnt/
+sudo chown  $USER:$USER /oci/mnt
+
+#check the path
+ls -la /oci/mnt/
+```
+
+### let's create the mount
+
+```
+mountPath=/mnt/oci
+mkdir -p $mountPath
+
+nameSpace=$(oci os ns get | jq -r '.data') # you need the oci cli
+bucketName="dl-wiseupdata-data-dev"
+region="us-ashburn-1"
+url=https://$nameSpace.compat.objectstorage.$region.oraclecloud.com
+
+s3fs $bucketName $mountPath \
+-o passwd_file=$HOME/.passwd-s3fs \
+-o url=$url \
+-o endpoint=$region \
+-o nomultipart \
+-o use_path_request_style \
+-o allow_other \
+-o dbg=info 
+
+ls -la $mountPath
+```
+
+### Unmount
+```
+umount -l $mountPath
+
+#not mounted anymore
+ls -la $mountPath
+
+# alternative 
+sudo fusermount -u $mountPath
+```
+
+# Clean the resources 🏳
+```
+sudo rm -Rf $mountPath
+```
+
+
+### Troubleshoot in the creating 😕
+
+```
+#check the variables values:
+
+echo $nameSpace
+echo $bucketName
+echo $region
+echo $url
+
+ls -la $mountPath
+cat $HOME/.passwd-s3fs
+```
+
+### Troubleshoot unmount 😕
+
+```
+lsof /home/wiseupdata/.oci_mount
+sudo kill 42277
+```
+
 
 </details>
 
