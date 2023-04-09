@@ -18,13 +18,13 @@
 
 <a name="readme-top"></a>
 
-<img align="left" alt="img" src="https://raw.githubusercontent.com/wiseupdata/shell-linux/main/assets/terraform.png" width="100" />
+<img align="left" alt="img" src="https://raw.githubusercontent.com/wiseupdata/shell-linux/master/assets/linux.png" width="100" />
 
 <h1>
-Shell Utils Commands
-Ubuntu
-
+Shell Linux
 </h1>
+Util Commands | Ubuntu, Debian, Wsl2
+<br>
 <br>
 
 <details>
@@ -136,6 +136,27 @@ sudo service x2goserver status
 <br>
 
 </details>
+
+</details>
+
+<details>
+<summary>
+    ⏬ Shell commands 
+</summary>
+
+<br>
+<details>
+<summary>
+    ⏬ Mount OCI Bucket 🧑‍💻
+</summary>
+
+
+### Let's update the Ubuntu system
+
+```
+sudo apt update
+sudo apt upgrade
+```
 
 </details>
 
