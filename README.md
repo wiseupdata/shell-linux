@@ -200,16 +200,6 @@ You can check the result with
 cat $HOME/.passwd-s3fs
 ```
 
-### Create a directory to the mount
-
-```
-sudo mkdir -p /oci/mnt/
-sudo chown  $USER:$USER /oci/mnt
-
-#check the path
-ls -la /oci/mnt/
-```
-
 ### let's create the mount
 
 ```
@@ -221,24 +211,40 @@ bucketName="dl-wiseupdata-data-dev"
 region="us-ashburn-1"
 url=https://$nameSpace.compat.objectstorage.$region.oraclecloud.com
 
-s3fs $bucketName $mountPath \
+sudo s3fs $bucketName $mountPath \
 -o passwd_file=$HOME/.passwd-s3fs \
 -o url=$url \
 -o endpoint=$region \
 -o nomultipart \
 -o use_path_request_style \
--o allow_other \
--o dbg=info 
+-ouid=1000,gid=1000,allow_other,mp_umask=002
 
-ls -la $mountPath
+ls -la $mountPath && echo $mountPath
 ```
+
+### Test the connection
+
+```
+cd $mountPath
+ll
+cd tmp
+touch works!
+rm  works!
+
+```
+
+### Result 
+
+<a href="https://github.com/wiseupdata/wiseupdata">
+<img align="center" alt="gif" src="assets/mount.gif" width="700" />
+<a/>
 
 ### Unmount
 ```
-umount -l $mountPath
+sudo umount -l $mountPath
 
 #not mounted anymore
-ls -la $mountPath
+ls -la $mountPath && echo $mountPath
 
 # alternative 
 sudo fusermount -u $mountPath
