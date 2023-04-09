@@ -34,13 +34,13 @@ Util Commands | Ubuntu, Debian, Wsl2
 
 <details>
 <summary>
-    ⏬ Install GUI RDP, remote desktop in one VM 
+    Install GUI RDP, remote desktop in one VM ⏬
 </summary>
 
 <br>
 <details>
 <summary>
-    ⏬ Information 🔎
+    Information 🔎
 </summary>
 
 > X2Go is a remote desktop software solution that enables you to access graphical desktops of Linux servers over a low bandwidth connection. It is a fast and lightweight alternative to other remote desktop protocols, such as VNC or RDP.
@@ -60,7 +60,7 @@ Util Commands | Ubuntu, Debian, Wsl2
 
 <details>
 <summary>
-    ⏬ Installation 🧑‍💻
+  Installation 🧑‍💻
 </summary>
 
 
@@ -126,7 +126,7 @@ sudo service x2goserver status
 
 <details>
 <summary>
-    ⏬ Extra - Install the X2Go Client in the Windows 11 ♨️
+  Extra - Install the X2Go Client in the Windows 11 ♨️
 </summary>
 
 ### Let's download the client ✈️
@@ -151,13 +151,13 @@ sudo service x2goserver status
 
 <details>
 <summary>
-    ⏬ Shell commands 
+  Shell commands ⏬ 
 </summary>
 
 <br>
 <details>
 <summary>
-    ⏬ Mount OCI Bucket 🧑‍💻
+  Mount OCI Bucket 🧑‍💻
 </summary>
 
 
