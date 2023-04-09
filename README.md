@@ -157,7 +157,7 @@ sudo service x2goserver status
 </summary>
 
 
-### Let's install the s3fs-fuse
+### Let's install the s3fs 🛠️
 
 
 > Requirements
@@ -177,7 +177,7 @@ sudo apt install s3fs -y
 <br>
 <br>
 
-### Generate the credentials in the Oracle Painel
+### Generate the credentials in the Oracle Painel 🔐
 
 > Profile [icon] > My profile > Customer secret keys
 
@@ -185,7 +185,7 @@ sudo apt install s3fs -y
 <img align="center" alt="gif" src="assets/secret.gif" width="700" />
 <a/>
 
-### Save the credentials
+### Save the credentials💲
 
 ```
 echo $ACCESS_KEY_OCI_ID:$SECRET_ACCESS_OCI_KEY > $HOME/.passwd-s3fs
@@ -200,7 +200,7 @@ You can check the result with
 cat $HOME/.passwd-s3fs
 ```
 
-### let's create the mount
+### let's create the mount 🦄 🗂️
 
 ```
 mountPath=/mnt/oci
@@ -222,7 +222,7 @@ sudo s3fs $bucketName $mountPath \
 ls -la $mountPath && echo $mountPath
 ```
 
-### Test the connection
+### Test the connection 🔌
 
 ```
 cd $mountPath
@@ -233,13 +233,13 @@ rm  works!
 
 ```
 
-### Result 
+### Result 🏅 🏆
 
 <a href="https://github.com/wiseupdata/wiseupdata">
 <img align="center" alt="gif" src="assets/mount.gif" width="700" />
 <a/>
 
-### Unmount
+### Unmount 🌧️
 ```
 sudo umount -l $mountPath
 
@@ -250,13 +250,13 @@ ls -la $mountPath && echo $mountPath
 sudo fusermount -u $mountPath
 ```
 
-# Clean the resources 🏳
+# Clean the resources 🧹
 ```
 sudo rm -Rf $mountPath
 ```
 
 
-### Troubleshoot in the creating 😕
+### Troubleshoot in the creating 😕 🔦
 
 ```
 #check the variables values:
@@ -270,7 +270,7 @@ ls -la $mountPath
 cat $HOME/.passwd-s3fs
 ```
 
-### Troubleshoot unmount 😕
+### Troubleshoot unmount 😕 📉
 
 ```
 lsof /home/wiseupdata/.oci_mount
@@ -283,7 +283,7 @@ sudo kill 42277
 <br>
 <br>
 
-# References 🌍
+# References 🌍 🗄️
 
 1. [Wise Up Data](https://github.com/wiseupdata)
 1. [RDP alternative](https://www.youtube.com/watch?v=Moscv2moML8)
